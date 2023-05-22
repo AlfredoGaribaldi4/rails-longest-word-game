@@ -1,0 +1,14 @@
+<h1><strong>New Game<strong></h1>
+<div class = "d-flex">
+  <% @letters.each do |letter| %>
+    <h1 class = "btn btn-primary mx-2" id = "letter-btn"><%= letter %></h1>
+  <% end %>
+</div>
+
+<form action="/score" method="post" data-turbo="false">
+<div class = "search-containet">
+  <input class = "search-bar" type="text" name="letter">
+  <input type="submit">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</div>
+</form>
